@@ -5,16 +5,17 @@ ipAdres1Aggeciti='10.20.0.0'
 ipAdres2='10.21.30.10'
 ipAdres2AgMaskesi='255.255.0.0'
 ipAdres2Aggeciti='10.21.0.0'
-birincilAg='ens34'
-ikincilAg='ens35'
-grup1='canberk'
-grup2='ozdemir'
-kullanici1='kullanici1'
-kullanici2='kullanici2'
-kullanici3='kullanici3'
-kullanici4='kullanici4'
-kullaniciOrtakSifreleri='canberk'
-dnsAlanAdi='canberkozdemir' # .com .obs vb uzantıları kendi ekler
+birincilAg='enp0s9'
+ikincilAg='enp0s9'
+grup1='alperen'
+grup2='coskun'
+kullanici1='user1'
+kullanici2='user2'
+kullanici3='user3'
+kullanici4='user4'
+kullaniciOrtakSifreleri='alperen'
+dnsAlanAdi='alperencoskun' # .com .obs vb uzantıları kendi ekler
+dnsAlanAdi2='coskunalperen' # .com .obs vb uzantıları kendi ekler
 dnsReverseZoneAdresi='30.20.10'
 dnsYonlendirme='10.20.30'
 dhcpAg1BaslangicIp='10.20.30.200'
@@ -36,7 +37,7 @@ echo "┏━┓╺┓ ┏━┓┏━┓┏━┓┏━┓╺┓ ╺┓"
 echo "┃┃┃ ┃ ┃┃┃┃┃┃┃┃┃┃┃┃ ┃  ┃"
 echo "┗━┛╺┻╸┗━┛┗━┛┗━┛┗━┛╺┻╸╺┻"
 echo -en "\n"
-echo  c.ozdemir96@gmail.com
+echo  NOPE
 echo -en "\n"
 echo "#######################"
 sleep 3;
@@ -123,19 +124,19 @@ echo -n " Dns Dosyaları konfigürasyonu yapılıyor.. "
 mkdir pass
 cp named.conf pass/namedpass.conf
 sed -ie s/10.20.30.10/$ipAdres1/g pass/namedpass.conf
-sed -ie s/canberkozdemir/$dnsAlanAdi/g pass/namedpass.conf
+sed -ie s/alperencoskun/$dnsAlanAdi/g pass/namedpass.conf
 sed -ie s/30.20.10/$dnsReverseZoneAdresi/g pass/namedpass.conf
 sed -ie s/10.20.30/$dnsYonlendirme/g pass/namedpass.conf
 mv pass/namedpass.conf /etc/named.conf
 # forward zone işlemleri
-cp canberkozdemir.forward pass/$dnsAlanAdi.forward
-sed -ie s/canberkozdemir/$dnsAlanAdi/g pass/$dnsAlanAdi.forward
+cp alperencoskun.forward pass/$dnsAlanAdi.forward
+sed -ie s/alperencoskun/$dnsAlanAdi/g pass/$dnsAlanAdi.forward
 sed -ie s/10.20.30/$dnsYonlendirme/g pass/$dnsAlanAdi.forward
 sed -ie s/10.20.30.10/$ipAdres1/g pass/$dnsAlanAdi.forward
 mv pass/$dnsAlanAdi.forward /var/named/$dnsAlanAdi.forward
 # reverse zone işlemleri
-cp canberkozdemir.reverse pass/$dnsAlanAdi.reverse
-sed -ie s/canberkozdemir/$dnsAlanAdi/g pass/$dnsAlanAdi.reverse
+cp alperencoskun.reverse pass/$dnsAlanAdi.reverse
+sed -ie s/alperencoskun/$dnsAlanAdi/g pass/$dnsAlanAdi.reverse
 sed -ie s/30.20.10/$dnsReverseZoneAdresi/g pass/$dnsAlanAdi.reverse
 mv pass/$dnsAlanAdi.reverse /var/named/$dnsAlanAdi.reverse
 echo -e "${yesil}TAMAM${siyah}"
@@ -174,7 +175,7 @@ echo -n " Dhcp konfigürasyon dosyaları hazırlanıyor.. "
 cp dhcpd.conf pass/dhcpdpass.conf
 sed -ie s/10.20.0.0/$ipAdres1Aggeciti/g pass/dhcpdpass.conf
 sed -ie s/255.255.0.0/$ipAdres1AgMaskesi/g pass/dhcpdpass.conf
-sed -ie s/canberkozdemir/$dnsAlanAdi/g pass/dhcpdpass.conf
+sed -ie s/alperencoskun/$dnsAlanAdi/g pass/dhcpdpass.conf
 sed -ie s/10.20.30.10/$ipAdres1/g pass/dhcpdpass.conf
 sed -ie s/10.20.30.200/$dhcpAg1BaslangicIp/g pass/dhcpdpass.conf
 sed -ie s/10.20.30.220/$dhcpAg1BitisIp/g pass/dhcpdpass.conf
