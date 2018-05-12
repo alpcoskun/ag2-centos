@@ -11,7 +11,7 @@ Sanal işletim sistemi (centos 7) üzerine çeşitli servisleri kurar ve başlan
 ![Ağ ayarları](http://www.canberkozdemir.com/Okul/ag2/agayarlari.png)
 4. root girişi yapın ardından bu komutu kullanarak kaynak dosyaları indirin
 ```shell
-git clone https://github.com/canberk/ag2-centos.git 
+git clone https://github.com/alpcoskun/ag2-centos.git 
 ```
 5. shell dosyası üzerinde gerekli değişken değişikliklerini kendinize göre yaptıktan sonra scripti çalıştırın.
 ```shell
