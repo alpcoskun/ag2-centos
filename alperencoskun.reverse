@@ -1,0 +1,17 @@
+$ORIGIN 30.20.10.in-addr.arpa.
+
+$TTL 1H
+
+@       IN      SOA     alperencoskun.com.     hostmaster.alperencoskun.com. ( 2
+                                                3H
+                                                1H
+                                                1W
+                                                1H )
+30.20.10.in-addr.arpa.         IN NS      root.alperencoskun.com.
+120     IN PTR  alperencoskun-srv.alperencoskun.com
+131     IN PTR  mail.alperencoskun.com
+132     IN PTR  obs.alperencoskun.com
+125     IN PTR  w3.alperencoskun.com
+126     IN PTR  web.alperencoskun.com
+127     IN PTR  obs.alperencoskun.com
+10	IN PTR 	www.alperencoskun.com
